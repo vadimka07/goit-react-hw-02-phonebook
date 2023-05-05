@@ -1,16 +1,18 @@
-// import { nanoid } from "nanoid";
-//
+import { Component } from "react";
+import PropTypes from "prop-types";
+class Filter extends Component {
 
-{/*<ul>*/}
-{/*    { contacts.map( ( { id, name, number } ) => {*/}
-{/*        return ( <li key={ id }>*/}
-{/*            { name }: { number }*/}
-{/*        </li> );*/}
-{/*    } ) }*/}
-{/*</ul>*/}
-// <input
-//     type="text"
-//     name="filter"
-//     onChange={ this.handlerFilter }
-//     value={ this.state.filter }
-// />
+
+    render() {
+      return (
+          <input type="text" name="filter" value={this.props.value} onChange={this.props.onChange}/>
+      )
+    }
+}
+
+export default Filter;
+
+Filter.propTypes = {
+    value:PropTypes.string,
+    onChange:PropTypes.func
+}
